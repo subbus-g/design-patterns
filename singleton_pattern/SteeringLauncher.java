@@ -18,11 +18,18 @@ class Steering
         return type;
     }
 
+    //double check lock to be threadsafe
     public static Steering getUniqueSteering() 
     {
         if (uniqueSteering == null) 
         {
-            uniqueSteering = new Steering();
+            synchronized (Steering.class) 
+            {
+                if (uniqueSteering == null) 
+                {
+                    uniqueSteering = new Steering();
+                }
+            }
         }
         return uniqueSteering;
     }
