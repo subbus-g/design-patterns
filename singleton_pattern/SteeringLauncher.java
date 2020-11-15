@@ -1,10 +1,18 @@
+/*-----definition---------
+/The Singleton Pattern ensures that a class has one and only one instance 
+/and provides global point of access to that instance
+/----things-to-ensure-----
+/private constructor,static object creation and a method to access it
+*/
 package singleton_pattern;
 
 class Steering 
 {
     private String type;
+    //static object creation
     private static Steering uniqueSteering;
 
+    //private constructor
     private Steering() 
     {
         type = "";
@@ -18,6 +26,7 @@ class Steering
         return type;
     }
 
+    //static method creation to access the static object
     //double check lock to be threadsafe
     public static Steering getUniqueSteering() 
     {
