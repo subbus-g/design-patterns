@@ -1,6 +1,7 @@
 package adaptor_pattern;
 
-public class IEWebDriverAdapter implements NewWebDriver {
+public class IEWebDriverAdapter implements NewWebDriver 
+{
     IEWebDriver ieDriver;
 
     public IEWebDriverAdapter(IEWebDriver ieDriver)
@@ -9,21 +10,22 @@ public class IEWebDriverAdapter implements NewWebDriver {
     }
 
     @Override
-    public void getElement() {
+    public void getElement() 
+    {
         ieDriver.findElement();
 
     }
 
     @Override
-    public void selectElement() {
+    public void selectElement() 
+    {
         ieDriver.clickElement();
 
     }
 
     @Override
-    public void printBrowser() {
+    public void printBrowser() 
+    {
         ieDriver.printBrowser();
     }
-
-    
 }
